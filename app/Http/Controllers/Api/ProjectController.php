@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function index() {
 
         // Mi riprendo $projects richiamando insieme le relazioni con with
-        $projects = Project::with('type', 'technologies');
+        $projects = Project::with('type', 'technologies')->get();
 
         // Definisco response
         $response = [
