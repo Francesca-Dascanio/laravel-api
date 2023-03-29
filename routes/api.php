@@ -22,4 +22,7 @@ use App\Http\Controllers\Api\ProjectController;
 // });
 
 // Prendi rotta /projects richiamando la classe ProjectController (prefix: api) e la sua funzione index
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+// Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+
+// OPPURE (così accede a eventuali crud)
+Route::resource('projects', ProjectController::class)->only(['index']);
