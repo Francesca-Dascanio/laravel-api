@@ -12,8 +12,14 @@ class ProjectController extends Controller
 {
     public function index() {
 
+        // Per paginazione
+        $projectsPerPage = 10;
+
         // Mi riprendo $projects richiamando insieme le relazioni con with
-        $projects = Project::with('type', 'technologies')->get();
+        // $projects = Project::with('type', 'technologies')->get();
+
+        // Con paginazione
+        $projects = Project::with('type', 'technologies')->paginate($projectsPerPage);
 
         // Definisco response
         $response = [
