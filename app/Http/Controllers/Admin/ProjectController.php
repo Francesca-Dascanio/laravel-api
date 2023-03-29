@@ -83,7 +83,7 @@ class ProjectController extends Controller
             }
         }
         
-        Mail::to(['corinna@traversa.com', 'camilla@scola.com'])->send(new NewProject($newProject));
+        // Mail::to(['corinna@traversa.com', 'camilla@scola.com'])->send(new NewProject($newProject));
 
         // Redirect + messaggio di successo
         return redirect()->route('admin.projects.show', $newProject->id)->with('success', 'New project has been created successfully!');
