@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// Importa ProjectController
+use App\Http\Controllers\Api\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Prendi rotta /projects richiamando la classe ProjectController (prefix: api) e la sua funzione index
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
