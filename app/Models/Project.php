@@ -27,19 +27,19 @@ class Project extends Model
         return $this->belongsToMany(Technology::class);
     }
 
-    protected $appends = [
-        'full_img_path'
-    ];
+    // protected $appends = [
+    //     'full_img_path'
+    // ];
 
-    public function getFullImgPathAttribute()
-    {
-        $fullPath = null;
+    // public function getFullImgPathAttribute()
+    // {
+    //     $fullPath = null;
 
-        if ($this->img) {
-            $fullPath = asset('storage/'.$this->img);
-        }
+    //     if ($this->img) {
+    //         $fullPath = asset('storage/'.$this->img);
+    //     }
 
-        return $fullPath;
-    }
+    //     return $fullPath;
+    // }
 
 }

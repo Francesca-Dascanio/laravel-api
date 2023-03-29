@@ -22,12 +22,12 @@ class ProjectController extends Controller
         $projects = Project::with('type', 'technologies')->paginate($projectsPerPage);
 
         // Path immagine
-        // foreach ($projects as $project) {
-        //     if($project->img) {
-        //         $project->img = asset('storage/'.$project->img);
-        //         // Non salvo per non modificare db
-        //     }
-        // }
+        foreach ($projects as $project) {
+            if($project->img) {
+                $project->img = asset('storage/'.$project->img);
+                // Non salvo per non modificare db
+            }
+        }
 
         // Definisco e restituisco dati
         return response()->json([
