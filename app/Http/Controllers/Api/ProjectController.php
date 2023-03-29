@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function index() {
 
         // Per paginazione
-        $projectsPerPage = 10;
+        $projectsPerPage = 24;
 
         // Mi riprendo $projects richiamando insieme le relazioni con with
         // $projects = Project::with('type', 'technologies')->get();
@@ -21,19 +21,20 @@ class ProjectController extends Controller
         // Con paginazione
         $projects = Project::with('type', 'technologies')->paginate($projectsPerPage);
 
-        // Definisco response
-        $response = [
-            'succcess' => true,
-            'code' => 200,
-            'message' => 'Ok',
-            'data' => $projects
-        ];
+        // Path immagine
+        // foreach ($projects as $project) {
+        //     if($project->img) {
+        //         $project->img = asset('storage/'.$project->img);
+        //         // Non salvo per non modificare db
+        //     }
+        // }
 
+        // Definisco e restituisco dati
         return response()->json([
             'succcess' => true,
             'code' => 200,
             'message' => 'Ok',
-            'data' => $response
+            'data' => $projects
         ]);
     }
 }
