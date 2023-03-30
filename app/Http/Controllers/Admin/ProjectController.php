@@ -69,7 +69,7 @@ class ProjectController extends Controller
 
         // Se file esiste, allora prendi path da inserire in DB
         if (array_key_exists('img', $data)) {
-            $imgPath = Storage::put('public', $data['img']);
+            $imgPath = Storage::put('storage', $data['img']);
             $data['img'] = $imgPath;
         }
 

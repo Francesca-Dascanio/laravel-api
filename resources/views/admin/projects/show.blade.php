@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     @if ($project->img)
-                        <img class="card-img-top" src="{{ asset('storage/'.$project->img) }}" alt="Image">
+                        <img class="card-img-top" src="{{ asset($project->img) }}" alt="Image">
                     @endif
                     <h5 class="card-title">
                         Slug: {{ $project->slug }}

@@ -69,8 +69,9 @@ return [
     |
     */
 
+    // Modificato qui il percorso per risalire alle img
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('storage') => storage_path('app/storage'),
     ],
 
 ];
