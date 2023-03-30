@@ -25,4 +25,4 @@ use App\Http\Controllers\Api\ProjectController;
 // Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 
 // OPPURE (così accede a eventuali crud)
-Route::resource('projects', ProjectController::class)->only(['index']);
+Route::resource('projects', ProjectController::class)->only(['index', 'show']);
